@@ -100,6 +100,9 @@ async def gate():
 def ana():
     return "<h2>SCC20 Gate Aktif</h2>/scc20?card=NUM|MM|YY|CVV"
 
-# ===================== RENDER İÇİN =====================
+# st.py – en alta bunu koy (diğer her şey aynı kalsın)
+
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=10000)
+    import os
+    port = int(os.environ.get("PORT", 10000))  # Railway PORT'u otomatik alır
+    app.run(host='0.0.0.0', port=port, debug=False)
